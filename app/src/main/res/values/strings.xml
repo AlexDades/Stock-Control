@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Stock Control</string>
+    <string name="scan_button">Scan</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="logo">Logo</string>
+
+    <string name="stock_in">Stock In</string>
+    <string name="product_list">Product List</string>
+    <string name="discounts">Discounts</string>
+    <string name="product_details">Product Details</string>
+    <string name="clock_in">Clock In</string>
+    <string name="employee_list">Employee List</string>
+
+    <string name="scan">Scan</string>
+    <string name="product_name">Product Name</string>
+    <string name="product_quantity">Product Quantity</string>
+    <string name="register_button">Register</string>
+
+    <string name="menu">Menu</string>
+</resources>

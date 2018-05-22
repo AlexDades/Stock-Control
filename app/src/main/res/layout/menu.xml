@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/stock_control_logo"
+        android:paddingBottom="@dimen/menu_logo_bottom_padding"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/menu_button_margin"
+            android:background="@color/menu_button"
+            android:text="@string/stock_in"
+            android:id="@+id/stock_in"/>
+
+        <View
+            android:layout_width="@dimen/view_between_button"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/menu_button_margin"
+            android:layout_weight="1"
+            android:background="@color/menu_button"
+            android:text="@string/product_list"
+            android:id="@+id/product_list"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_between_layouts" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="@dimen/menu_button_margin"
+            android:background="@color/menu_button"
+            android:text="@string/discounts"
+            android:id="@+id/discounts"/>
+
+        <View
+            android:layout_width="@dimen/view_between_button"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/menu_button_margin"
+            android:background="@color/menu_button"
+            android:text="@string/product_details"
+            android:id="@+id/product_details"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_between_layouts" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/menu_button"
+            android:layout_marginLeft="@dimen/menu_button_margin"
+            android:text="@string/clock_in"
+            android:id="@+id/clock_in"/>
+
+        <View
+            android:layout_width="@dimen/view_between_button"
+            android:layout_height="match_parent" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="@dimen/menu_button_margin"
+            android:background="@color/menu_button"
+            android:text="@string/employee_list"
+            android:id="@+id/employee_list"/>
+    </LinearLayout>
+</LinearLayout>

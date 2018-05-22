@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="login_text_view_padding">48dp</dimen>
+    <dimen name="button_margin">18dp</dimen>
+    <dimen name="menu_button_margin">24dp</dimen>
+    <dimen name="view_between_button">18dp</dimen>
+    <dimen name="view_between_layouts">24dp</dimen>
+    <dimen name="menu_logo_bottom_padding">64dp</dimen>
+    <dimen name="text_field_margin">12dp</dimen>
+    <dimen name="navigation_button">84dp</dimen>
+
+</resources>

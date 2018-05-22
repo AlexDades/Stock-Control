@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/stock_control_logo"
+        android:contentDescription="@string/logo"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/login_text_view_padding"
+        android:inputType="textPersonName"
+        android:id="@+id/username_text_view"
+        android:hint="@string/username"
+        />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/login_text_view_padding"
+        android:inputType="textPassword"
+        android:id="@+id/password_text_view"
+        android:hint="@string/password"
+/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/button_margin"
+        android:text="@string/login"
+        android:layout_gravity="center"
+        android:id="@+id/login_button"
+        android:padding="@dimen/button_margin"
+        android:background="@color/login_color"
+        />
+
+</LinearLayout>

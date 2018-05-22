@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#F57C00</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#FF9800</color>
+    <color name="login_color">#8EB4B7</color>
+    <color name="menu_background">#F57C00</color>
+    <color name="menu_button">#F57C00</color>
+    <color name="scan_items_fields">#ffffff</color>
+    <color name="text_color">#000000</color>
+    <color name="black">#000000</color>
+</resources>
+
