@@ -9,5 +9,6 @@
     <color name="scan_items_fields">#ffffff</color>
     <color name="text_color">#000000</color>
     <color name="black">#000000</color>
+    <color name="colorBackground">#FF9800</color>
 </resources>
 
