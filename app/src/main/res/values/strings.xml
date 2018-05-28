@@ -19,4 +19,29 @@
     <string name="register_button">Register</string>
 
     <string name="menu">Menu</string>
+
+    <string name="zizin">Zizin - Apa Plata</string>
+    <string name="quantity">2L</string>
+
+    <string name="carrefour">Carrefour</string>
+    <string name="number">1 bucata</string>
+
+    <string name="apply_discount">Apply discount</string>
+    <string name="price">Price</string>
+    <string name="zizin_price_value">5 Lei</string>
+    <string name="card_price_value">2 Lei</string>
+
+    <string name="five_percent_discount">5%</string>
+    <string name="ten_percent_discount">10%</string>
+    <string name="twenty_percent_discount">20%</string>
+
+    <string name="zizin_five_percent_discount">4.75 Lei</string>
+    <string name="zizin_ten_percent_discount">4.5 Lei</string>
+    <string name="zizin_twenty_percent_discount">4 Lei</string>
+    <string name="employee_name_text_view">Employee Name</string>
+    <string name="employee_name">John Doe</string>
+    <string name="employee_role_text_view">Employee Role</string>
+    <string name="employee_role">Manager</string>
+    <string name="employee_code_text_view">Employee Code</string>
+
 </resources>

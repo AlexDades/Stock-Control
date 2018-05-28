@@ -1,56 +1,46 @@
 package com.example.android.stockcontrol;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import com.com.google.zxing.integration.android.IntentIntegrator;
 import com.com.google.zxing.integration.android.IntentResult;
+import com.data.ProductDBHelper;
 import com.data.ProductsContract;
 import com.data.SQLHelper;
-import com.example.android.stockcontrol.R;
+
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-import static com.data.ProductsContract.Products.*;
 
-import java.io.File;
-import java.io.FileOutputStream;
+import static java.security.AccessController.getContext;
 
 public class StockIn extends AppCompatActivity implements OnClickListener {
 
     private Button scanBtn, register;
-    private TextView formatTxt, contentTxt;
+    private EditText productName, productQuantity;
     ImageView back, forward;
-    String scanContent;
+    String barcode;
+    SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.stock_in);
-
-        scanBtn = (Button)findViewById(R.id.scan_button);
-        formatTxt = (TextView)findViewById(R.id.scan_format);
-        contentTxt = (TextView)findViewById(R.id.scan_content);
+        db = getDatabase();
+        scanBtn = findViewById(R.id.scan_button);
+        productName = findViewById(R.id.product_name);
+        productQuantity = findViewById(R.id.product_quantity);
         back =  findViewById(R.id.back);
-        register = findViewById(R.id.register_button);
+        register = createRegisterButton();
         forward = findViewById(R.id.forward);
         scanBtn.setOnClickListener(this);
-
-        SQLHelper mDBHelper = new SQLHelper(this);
-        SQLiteDatabase db = mDBHelper.getReadableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(COLUMN_PRODUCT_NAME, "Zizin");
-        values.put(COLUMN_BARCODE, scanContent);
-        values.put(_ID, 1);
-        values.put(COLUMN_QUANTITY, "2L");
-        db.insert(ProductsContract.Products.TABLE_NAME, null, values);
-
-
 
         //Back to Menu
         back.setOnClickListener(new View.OnClickListener(){
@@ -71,6 +61,8 @@ public class StockIn extends AppCompatActivity implements OnClickListener {
             }
         });
 
+
+
     }
     public void onClick(View v){
         if(v.getId()==R.id.scan_button){
@@ -79,25 +71,44 @@ public class StockIn extends AppCompatActivity implements OnClickListener {
         }
     }
 
-
-
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
         if (scanningResult != null) {
-            scanContent = scanningResult.getContents();
-            String scanFormat = scanningResult.getFormatName();
-
-
-            if(scanContent.equals ("5942233001353") && scanFormat.equals("EAN_13"))
-            formatTxt.setText("Zizin - Apa plata");
-            contentTxt.setText("Cantitate: 1L");
+            barcode = scanningResult.getContents();
+            register.setActivated(true);
         }
         else{
+            register.setActivated(false);
             Toast toast = Toast.makeText(getApplicationContext(),
                     "No scan data received!", Toast.LENGTH_SHORT);
             toast.show();
         }
     }
+
+    private SQLiteDatabase getDatabase(){
+        SQLHelper helper = new SQLHelper(getApplicationContext());
+        return helper.getWritableDatabase();
+
+    }
+
+    private Button createRegisterButton(){
+        Button b = findViewById(R.id.register_button);
+        b.setActivated(false);
+        b.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Product product = new Product(barcode, productName.getText().toString(), productQuantity.getText().toString());
+                String[] columns = db.query(ProductsContract.Products.TABLE_NAME, null, null, null, null, null, null).getColumnNames();
+                for(String name : columns){
+                    Log.d("Column name", name);
+                }
+                db.insert(ProductsContract.Products.TABLE_NAME, null, ProductDBHelper.getContentValuesForProduct(product));
+                Toast.makeText(StockIn.this, "Product successfully registered", Toast.LENGTH_SHORT).show();
+            }
+        });
+        return b;
+    }
+
 
 }
 

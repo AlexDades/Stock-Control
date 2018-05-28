@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".Discounts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent">
+    android:gravity="center">
 
-    <ImageView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/boxes"
-        android:contentDescription="@string/logo"
-        android:paddingBottom="@dimen/menu_logo_bottom_padding"
-        />
+        android:orientation="vertical"
+        android:layout_weight="2"
+        android:gravity="center">
 
-    <Button android:id="@+id/scan_button"
+    <Button android:id="@+id/scan_item_for_discount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/scan"
@@ -22,7 +23,7 @@
         android:background="@color/black"
         android:layout_margin="@dimen/text_field_margin"/>
 
-    <EditText
+    <TextView
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,7 +35,8 @@
         android:layout_margin="@dimen/text_field_margin"
         android:textColor="@color/text_color"
         android:textAlignment="center"/>
-    <EditText
+
+    <TextView
         android:id="@+id/product_quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,36 +49,35 @@
         android:textColor="@color/text_color"
         android:textAlignment="center"/>
 
-    <Button android:id="@+id/register_button"
+    <TextView
+        android:id="@+id/product_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register_button"
+        android:textIsSelectable="true"
+        android:hint="@string/price"
+        android:textColorHint="@color/text_color"
         android:layout_gravity="center"
+        android:background="@color/scan_items_fields"
         android:layout_margin="@dimen/text_field_margin"
-        android:background="@color/black"/>
+        android:textColor="@color/text_color"
+        android:textAlignment="center"/>
 
-    <LinearLayout
+
+    <Button android:id="@+id/apply_discount_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/menu_logo_bottom_padding">
-
-        <ImageView
-            android:layout_width="@dimen/navigation_button"
-            android:layout_height="@dimen/navigation_button"
-            android:src="@drawable/back_button"
-            android:layout_weight="1"
-            android:id="@+id/back"/>
-        <ImageView
-            android:layout_width="@dimen/navigation_button"
-            android:layout_height="@dimen/navigation_button"
-            android:layout_weight="1"
-            android:src="@drawable/forward_button"
-            android:id="@+id/forward"/>
+        android:text="@string/apply_discount"
+        android:layout_gravity="center"
+        android:background="@color/black"
+        android:layout_margin="@dimen/text_field_margin" />
 
     </LinearLayout>
 
-
-
+    <ImageView
+        android:layout_width="@dimen/navigation_button"
+        android:layout_height="@dimen/navigation_button"
+        android:src="@drawable/back_button"
+        android:layout_weight="1"
+        android:id="@+id/back"/>
 
 </LinearLayout>

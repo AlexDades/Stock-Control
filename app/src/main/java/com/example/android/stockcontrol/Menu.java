@@ -37,5 +37,35 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+        productDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent productDetails = new Intent(Menu.this, ProductDetails.class);
+                startActivity(productDetails);
+            }
+        });
+
+        discounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu = new Intent (Menu.this, Discounts.class);
+                startActivity(menu);
+            }
+        });
+
+        clockIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent clockIn = new Intent(Menu.this, ClockIn.class);
+                startActivity(clockIn);
+            }
+        });
+        employeeList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent employeeList = new Intent(Menu.this, EmployeeList.class);
+                startActivity(employeeList);
+            }
+        });
     }
 }
