@@ -38,9 +38,19 @@ public class ProductDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.product_details);
 
+        String name = getIntent().getStringExtra("name");
+        String barCode = getIntent().getStringExtra("barcode");
+        String quantity = getIntent().getStringExtra("quantity");
+
+
+
         productName = findViewById(R.id.product_name);
         productQuantity = findViewById(R.id.product_quantity);
         productImage = findViewById(R.id.product_image);
+
+        productName.setText(name);
+        productQuantity.setText(barCode);
+
         scan = findViewById(R.id.scan_details_button);
         scan.setOnClickListener(new OnClickListener() {
             @Override

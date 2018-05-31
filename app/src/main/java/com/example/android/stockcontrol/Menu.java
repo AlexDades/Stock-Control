@@ -8,18 +8,21 @@ import android.widget.Button;
 
 public class Menu extends AppCompatActivity {
 
-    Button stockIn, productList, discounts, productDetails, clockIn, employeeList;
+    Button stockIn, productList, discounts, productDetails, clockIn, employeeList, clockOut, stockTransfer, stockWatch;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
         stockIn = findViewById(R.id.stock_in);
-        productList = findViewById(R.id.product_list);
+        productList = findViewById(R.id.product_list_button);
         discounts = findViewById(R.id.discounts);
         productDetails = findViewById(R.id.product_details);
         clockIn = findViewById(R.id.clock_in);
-        employeeList = findViewById(R.id.employee_list);
+        employeeList = findViewById(R.id.employee_list_button);
+        clockOut = findViewById(R.id.clock_out_button);
+        stockTransfer = findViewById(R.id.stock_transfer_button);
+        stockWatch = findViewById(R.id.stockwatch_button);
 
         stockIn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,6 +68,28 @@ public class Menu extends AppCompatActivity {
             public void onClick(View v) {
                 Intent employeeList = new Intent(Menu.this, EmployeeList.class);
                 startActivity(employeeList);
+            }
+        });
+
+        clockOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent clockOut = new Intent(Menu.this, ClockOut.class);
+                startActivity(clockOut);
+            }
+        });
+        stockTransfer.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent stockTransfer = new Intent(Menu.this, StockTransfer.class);
+                startActivity(stockTransfer);
+            }
+        });
+        stockWatch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent stockWatch = new Intent(Menu.this, StockWatch.class);
+                startActivity(stockWatch);
             }
         });
     }

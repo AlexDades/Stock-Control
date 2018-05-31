@@ -20,12 +20,12 @@ public class ProductDBHelper {
         return values;
     }
 
-    public static List<Product> getAllProducts(SQLiteDatabase db){
+/*    public static List<Product> getAllProducts(SQLiteDatabase db){
         Cursor cursor = db.query(ProductsContract.Products.TABLE_NAME, null, null, null, null, null, null);
         List<Product> products = new ArrayList<>();
         while(cursor.moveToNext()){
             products.add(new Product(cursor.getString(1), cursor.getString(2), cursor.getString(3)));
         }
         return products;
-    }
+    }*/
 }

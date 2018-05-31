@@ -39,9 +39,22 @@
     <string name="zizin_ten_percent_discount">4.5 Lei</string>
     <string name="zizin_twenty_percent_discount">4 Lei</string>
     <string name="employee_name_text_view">Employee Name</string>
-    <string name="employee_name">John Doe</string>
+    <string name="employee_name_example">John Doe</string>
     <string name="employee_role_text_view">Employee Role</string>
-    <string name="employee_role">Manager</string>
+    <string name="employee_role_example">Manager</string>
     <string name="employee_code_text_view">Employee Code</string>
 
+    <string name="employee_name">Employee Name</string>
+    <string name="employee_role">Employee Role</string>
+    <string name="employee_code">Employee Code</string>
+    <string name="product_barcode">Product Barcode</string>
+    <string name="clock_out_button">Clock Out</string>
+    <string name="stock_transfer_button">Stock Transfer</string>
+    <string name="stockwatch_button">Stockwatch</string>
+    <string name="product_quantity_for_transfer">Quantity for Transfer</string>
+    <string name="transfer_button">Transfer</string>
+    <string name="to_store">To Store</string>
+    <string name="scan_stockwatch">Scan</string>
+    <string name="quantity_available">Quantity Available</string>
+    <string name="register_quantity_button">Register Quantity</string>
 </resources>

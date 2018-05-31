@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products>
+    <product>
+        <name>Zizin</name>
+        <barcode>5942233001353</barcode>
+        <quantity>0.5</quantity>
+    </product>
+    <product>
+        <name>Something</name>
+        <barcode>5942233001353</barcode>
+        <quantity>Somewhat</quantity>
+    </product>
+    <product>
+        <name>Something Else</name>
+        <barcode>5942233001353</barcode>
+        <quantity>Somewhat more</quantity>
+    </product>
+</products>

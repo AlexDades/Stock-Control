@@ -3,21 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorAccent">
+    android:orientation="vertical">
 
-    <ImageView
+    <Button
+        android:id="@+id/scan_stockwatch_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/boxes"
-        android:contentDescription="@string/logo"
-        android:paddingBottom="@dimen/menu_logo_bottom_padding"
-        />
-
-    <Button android:id="@+id/scan_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/scan"
+        android:text="@string/scan_stockwatch"
         android:layout_gravity="center"
         android:background="@color/black"
         android:layout_margin="@dimen/text_field_margin"/>
@@ -35,7 +27,7 @@
         android:textColor="@color/text_color"
         android:textAlignment="center"/>
 
-    <EditText
+    <TextView
         android:id="@+id/product_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +39,7 @@
         android:layout_margin="@dimen/text_field_margin"
         android:textColor="@color/text_color"
         android:textAlignment="center"/>
-    <EditText
+    <TextView
         android:id="@+id/product_quantity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -60,36 +52,39 @@
         android:textColor="@color/text_color"
         android:textAlignment="center"/>
 
-    <Button android:id="@+id/register_button"
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/register_button"
+        android:id="@+id/product_image"
+        />
+
+    <EditText
+        android:id="@+id/quantity_stock_watch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textIsSelectable="true"
+        android:hint="@string/quantity_available"
+        android:textColorHint="@color/text_color"
+        android:layout_gravity="center"
+        android:background="@color/scan_items_fields"
+        android:layout_margin="@dimen/text_field_margin"
+        android:textColor="@color/text_color"
+        android:textAlignment="center"/>
+
+    <Button android:id="@+id/register_quantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/register_quantity_button"
         android:layout_gravity="center"
         android:layout_margin="@dimen/text_field_margin"
         android:background="@color/black"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingTop="@dimen/menu_logo_bottom_padding">
-
-        <ImageView
-            android:layout_width="@dimen/navigation_button"
-            android:layout_height="@dimen/navigation_button"
-            android:src="@drawable/back_button"
-            android:layout_weight="1"
-            android:id="@+id/back"/>
-        <ImageView
-            android:layout_width="@dimen/navigation_button"
-            android:layout_height="@dimen/navigation_button"
-            android:layout_weight="1"
-            android:src="@drawable/forward_button"
-            android:id="@+id/forward"/>
-
-    </LinearLayout>
-
-
-
+    <ImageView
+        android:layout_width="@dimen/navigation_button"
+        android:layout_height="@dimen/navigation_button"
+        android:src="@drawable/back_button"
+        android:layout_weight="1"
+        android:id="@+id/back_to_menu"
+        android:layout_gravity="center"/>
 
 </LinearLayout>

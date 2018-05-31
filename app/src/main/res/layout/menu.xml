@@ -39,7 +39,7 @@
             android:layout_weight="1"
             android:background="@color/menu_button"
             android:text="@string/product_list"
-            android:id="@+id/product_list"/>
+            android:id="@+id/product_list_button"/>
     </LinearLayout>
 
     <View
@@ -97,12 +97,68 @@
             android:layout_height="match_parent" />
 
         <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginRight="@dimen/menu_button_margin"
+        android:background="@color/menu_button"
+        android:text="@string/employee_list"
+        android:id="@+id/employee_list_button"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_between_layouts" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/menu_button"
+            android:layout_marginLeft="@dimen/menu_button_margin"
+            android:text="@string/clock_out_button"
+            android:id="@+id/clock_out_button"/>
+
+        <View
+            android:layout_width="@dimen/view_between_button"
+            android:layout_height="match_parent" />
+
+        <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_marginRight="@dimen/menu_button_margin"
             android:background="@color/menu_button"
-            android:text="@string/employee_list"
-            android:id="@+id/employee_list"/>
+            android:text="@string/stock_transfer_button"
+            android:id="@+id/stock_transfer_button"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/view_between_layouts" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/menu_button"
+            android:layout_marginLeft="@dimen/menu_button_margin"
+            android:text="@string/stockwatch_button"
+            android:id="@+id/stockwatch_button"/>
+
+        <View
+            android:layout_width="@dimen/view_between_button"
+            android:layout_height="match_parent" />
+
     </LinearLayout>
 </LinearLayout>

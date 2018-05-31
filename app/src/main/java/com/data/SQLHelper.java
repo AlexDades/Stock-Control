@@ -13,7 +13,7 @@ public class SQLHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.delete(TABLE_NAME, null, null);
+        /*db.delete(TABLE_NAME, null, null);*/
         String SQL_CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_NAME + "("
                 + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
                 + COLUMN_BARCODE + " TEXT NOT NULL,"

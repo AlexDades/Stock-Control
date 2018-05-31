@@ -1,7 +1,7 @@
 package com.example.android.stockcontrol;
 
 public class Employee {
-    String name, role, code;
+    static String name, role, code;
 
     public Employee(String eName, String eRole, String eCode){
         this.name = eName;
@@ -9,15 +9,15 @@ public class Employee {
         this.code = eCode;
     }
 
-    public String getName(){
+    public static String getName(){
         return name;
     }
 
-    public String getRole(){
+    public static String getRole(){
         return role;
     }
 
-    public String getCode(){
+    public static String getBarCode(){
         return code;
     }
 }

@@ -2,7 +2,6 @@ package com.example.android.stockcontrol;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -13,60 +12,52 @@ import android.widget.Toast;
 import com.com.google.zxing.integration.android.IntentIntegrator;
 import com.com.google.zxing.integration.android.IntentResult;
 
-public class ClockIn extends AppCompatActivity {
-
-    ImageView back, forwardToDetails;
-    Button scanBtn, clockIn;
+public class ClockOut extends AppCompatActivity {
     String barcode;
+    ImageView backToMenu;
     TextView employeeName, employeeRole, employeeCode;
+    Button scanBtn, clockOut;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.clock_in);
+        setContentView(R.layout.clock_out);
 
         employeeName = findViewById(R.id.employee_name_text_view);
         employeeRole = findViewById(R.id.employee_role_text_view);
         employeeCode = findViewById(R.id.employee_code_text_view);
+        clockOut = findViewById(R.id.clock_out_button);
 
-        back = findViewById(R.id.back_to_menu);
-        back.setOnClickListener(new View.OnClickListener() {
+        backToMenu = findViewById(R.id.back_to_menu);
+        backToMenu.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent back = new Intent(ClockIn.this, Menu.class);
-                startActivity(back);
+            public void onClick(View view) {
+                Intent backToMenu = new Intent(ClockOut.this, Menu.class);
+                startActivity(backToMenu);
+
             }
         });
+
+        clockOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(ClockOut.this, "Employee clocked out", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         scanBtn = findViewById(R.id.scan_button);
         scanBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.scan_button) {
-                    IntentIntegrator scanIntegrator = new IntentIntegrator(ClockIn.this);
+                    IntentIntegrator scanIntegrator = new IntentIntegrator(ClockOut.this);
                     scanIntegrator.initiateScan();
                 }
             }
         });
-
-        forwardToDetails = findViewById(R.id.forward_to_employee_details);
-        forwardToDetails.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent forwardToDtails = new Intent (ClockIn.this, EmployeeList.class);
-                startActivity(forwardToDtails);
-            }
-        });
-
-
-        clockIn = findViewById(R.id.clock_in_button);
-        clockIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(ClockIn.this, "Clocked in", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
+
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
         IntentResult scanningResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, intent);
@@ -84,4 +75,5 @@ public class ClockIn extends AppCompatActivity {
             toast.show();
         }
     }
+
 }

@@ -2,25 +2,37 @@ package com.example.android.stockcontrol;
 
 public class Product {
 
-    String barCode;
-    String name;
-    String quantity;
+    private static String barCode;
+    private static String name;
+    private static String quantity;
 
-    public Product (String pBarcode, String pNAme, String pQuantity){
+/*    public Product (String pBarcode, String pName, String pQuantity){
         this.barCode = pBarcode;
-        this.name = pNAme;
+        this.name = pName;
         this.quantity = pQuantity;
-    }
+    }*/
 
-    public String getBarCode(){
+    public static String getBarCode(){
         return barCode;
     }
 
-    public String getName(){
+    public static String getName(){
         return name;
     }
 
-    public String getQuantity(){
+    public static String getQuantity(){
         return quantity;
     }
+
+    public void setName(String name){
+        this.name = name;
+    }
+    public void setBarcode(String barcode){
+        this.barCode = barcode;
+    }
+
+    public void setQuantity(String quantity){
+        this.quantity = quantity;
+    }
 }
+

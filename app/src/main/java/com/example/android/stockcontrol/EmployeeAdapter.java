@@ -32,7 +32,7 @@ public class EmployeeAdapter extends ArrayAdapter<Employee> {
         quantityTextView.setText(currentEmployee.getRole());
 
         TextView barcodeTextView = listItemView.findViewById(R.id.barcode_text_view);
-        barcodeTextView.setText(currentEmployee.getCode());
+        barcodeTextView.setText(currentEmployee.getBarCode());
 
         return listItemView;
     }

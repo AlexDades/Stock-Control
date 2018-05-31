@@ -1,22 +1,20 @@
 package com.example.android.stockcontrol;
 
 import android.content.Context;
+import android.location.Location;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.data.ProductDBHelper;
-import com.data.SQLHelper;
-import com.example.android.stockcontrol.cache.ProductCache;
 
 import java.util.ArrayList;
 
 public class ProductAdapter extends ArrayAdapter<Product> {
 
-    public ProductAdapter(Context context) {
-        super(context, 0, ProductDBHelper.getAllProducts(new SQLHelper(context).getWritableDatabase()));
+    public ProductAdapter(Context context, ArrayList<Product> products) {
+        super(context, 0, products);
     }
 
     @Override
